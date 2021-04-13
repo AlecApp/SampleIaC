@@ -6,7 +6,7 @@
 
 name: Create AWS Infrastructure
 on:
-  manual_dispatch:
+  workflow_dispatch:
 jobs:
   create:
     name: Create AWS Infrastructure
@@ -48,7 +48,7 @@ jobs:
 
       - name: Terraform apply (Default)
         id: apply
-        if: github.event_name == 'manual_dispatch'
+        if: github.event_name == 'workflow_dispatch'
         run: terraform apply -no-color -auto-approve
         continue-on-error: true
       
