@@ -4,6 +4,17 @@ variable "region" {
   description = "The region we're deploying to."
 }
 
+# Both the keys would be stored as environment variables in Terraform Cloud.
+variable "access_key" {
+  type        = string
+  description = "Access key for the Terraform user in our environment."
+}
+
+variable "secret_key" {
+  type        = string
+  description = "Secret key for the Terraform user in our environment."
+}
+
 variable "env" {
   type        = string
   default     = "dev"
