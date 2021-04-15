@@ -49,7 +49,7 @@ jobs:
       - name: Terraform apply (Default)
         id: apply
         if: github.event_name == 'workflow_dispatch'
-        run: terraform apply -no-color -auto-approve
+        run: terraform apply -no-color -auto-approve -var="my_cidr=${secrets.MY_CIDR}"
         continue-on-error: true
       
       # Demonstrating how GitHub Secrets can be used to store access keys for an AWS IAM user.
